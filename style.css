@@ -32,7 +32,8 @@
     margin: 0 auto 0;
 }
 
-.new-task__input, .to-do {
+.new-task__input,
+.to-do {
     width: 56%;
     display: inline-block;
     flex-grow: 1;
@@ -47,11 +48,13 @@
     padding: 0px;
 }
 
-.list-item, .h3 {
+.list-item,
+.h3 {
     list-style: none;
 }
 
-.input, .btn {
+.input,
+.btn {
     outline: none;
 }
 
@@ -70,7 +73,8 @@
 }
 
 /* Heading */
-.h3, .label[for="new-task"] {
+.h3,
+.label[for="new-task"] {
     color: #333;
     font-weight: 700;
     font-size: 15px;

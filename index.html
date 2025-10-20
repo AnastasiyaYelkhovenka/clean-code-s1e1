@@ -8,64 +8,64 @@
 
   <body class="page">
     <header class="banner">
-      <img class="img" src="./eisenhower-matrix.jpg" alt="Eisenhower matrix image">
-      <a class="more-details" 
-        href="https://goal-life.com/page/method/matrix-eisenhower">
-          Want more details?
-        </a>
+      <img class="banner__img" src="./eisenhower-matrix.jpg" alt="Eisenhower matrix image">
+      <a class="banner__link" href="https://goal-life.com/page/method/matrix-eisenhower">
+        Want more details?
+      </a>
     </header>
 
     <main class="main">
-      <h1 class="invisible">Todo App</h1>
-      <section>
+      <h1 class="visually-hidden">Todo App</h1>
+
+      <section class="new-task">
         <form class="new-task__form" id="new-task-form">
-          <h2 class="title">Add Item</h2>
-          <div class="new-task__wrapper">
-            <input id="new-task-input" class="input new-task__input" type="text" required />
-            <button type="submit" class="btn new-task__btn">Add</button>
+          <h2 class="new-task__title">Add Item</h2>
+          <div class="new-task__controls">
+            <input id="new-task-input" class="new-task__input" type="text" required />
+            <button type="submit" class="btn btn--primary new-task__submit">Add</button>
           </div>
         </form>
       </section>
 
-      <section>
-        <h2 class="title">Todo</h2>
+      <section class="todo">
+        <h2 class="todo__title">Todo</h2>
 
         <ul id="incomplete-tasks" class="todo__list">
           <li class="todo__item">
-            <label class="todo__label label">
-              <input type="checkbox" class="input" />
+            <label class="todo__label">
+              <input type="checkbox" class="todo__checkbox" />
               <span class="todo__text">Pay bills</span>
             </label>
-            <button type="button" class="todo__edit-btn btn">Edit</button>
-            <button type="button" class="todo__delete-btn btn">
-              <img class="img" src="./remove.svg" alt="">
+            <button type="button" class="btn btn--ghost todo__btn todo__btn--edit">Edit</button>
+            <button type="button" class="btn btn--icon todo__btn todo__btn--delete" aria-label="Delete">
+              <img class="todo__icon" src="./remove.svg" alt="">
             </button>
           </li>
 
-          <li class="edit-mode todo__item">
-            <input type="checkbox" class="input" />
-            <label class="todo label">Go Shopping</label>
-            <input type="text" value="Go Shopping" class="todo input" />
-            <button class="todo__edit-btn btn">Save</button>
-            <button class="todo__delete-btn btn">
-              <img class="img" src="./remove.svg" alt="">
+          <li class="todo__item todo__item--editing">
+            <input type="checkbox" class="todo__checkbox" />
+            <label class="todo__label">Go Shopping</label>
+            <input type="text" value="Go Shopping" class="todo__input-edit" />
+            <button class="btn btn--primary todo__btn todo__btn--save">Save</button>
+            <button class="btn btn--icon todo__btn todo__btn--delete" aria-label="Delete">
+              <img class="todo__icon" src="./remove.svg" alt="">
             </button>
           </li>
         </ul>
       </section>
-        
-      <section>
-        <h2 class="title">Completed</h2>
 
-        <ul id="completed-tasks" class="list">
+      <section class="todo">
+        <h2 class="todo__title">Completed</h2>
+
+        <ul id="completed-tasks" class="todo__list todo__list--completed">
           <li class="todo__item">
-            <label class="todo__label label">
-              <input type="checkbox" class="input" checked />
+            <label class="todo__label">
+              <input type="checkbox" class="todo__checkbox" checked />
               <span class="todo__text">See the Doctor</span>
             </label>
-            <button type="button" class="todo__edit-btn btn">Edit</button>
-            <button type="button" class="todo__delete-btn btn">
-              <img class="img" src="./remove.svg" alt="">
+            <button type="button" class="btn btn--ghost todo__btn todo__btn--edit">Edit</button>
+            <button type="button" class="btn btn--icon todo__btn todo__btn--delete" aria-label="Delete">
+              <img class="todo__icon" src="./remove.svg" alt="">
             </button>
           </li>
         </ul>

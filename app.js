@@ -53,44 +53,40 @@ const createNewTaskElement = function (taskString) {
 }
 
 
-
 const addTask = function () {
-    //Create a new list item with the text from the #new-task:
-    if (!taskInput.value) return;
-    const listItem = createNewTaskElement(taskInput.value);
+  if (!taskInput.value) return;
+  const listItem = createNewTaskElement(taskInput.value);
 
-    //Append listItem to incompleteTaskHolder
-    incompleteTaskHolder.appendChild(listItem);
-    bindTaskEvents(listItem, taskCompleted);
+  incompleteTaskHolder.appendChild(listItem);
+  bindTaskEvents(listItem, taskCompleted);
 
-    taskInput.value="";
-
+  taskInput.value="";
 }
 
-//Edit an existing task.
 
 const editTask = function () {
-    const listItem=this.parentNode;
+  const listItem=this.parentNode;
 
-    const editInput = listItem.querySelector(".todo__input-edit");
-    const label = listItem.querySelector(".todo__label");
+  const editInput = listItem.querySelector(".todo__input-edit");
+  const label = listItem.querySelector(".todo__label");
 
-    const editBtn = listItem.querySelector(".todo__btn--edit, .todo__btn--save");
-    const containsClass = listItem.classList.contains("todo__item--editing");
-    //If class of the parent is .editmode
-    if (containsClass) {
+  const editBtn = listItem.querySelector(".todo__btn--edit, .todo__btn--save");
+  const containsClass = listItem.classList.contains("todo__item--editing");
 
-        //switch to .editmode
-        //label becomes the inputs value.
-        label.innerText = editInput.value;
-        editBtn.innerText = "Edit";
-    } else {
-        editInput.value=label.innerText;
-        editBtn.innerText="Save";
-    }
+  if (containsClass) {
+    label.innerText = editInput.value;
+    editBtn.innerText = "Edit";
+    editBtn.classList.remove("todo__btn--save");
+    editBtn.classList.add("todo__btn--edit");
 
-    //toggle .editmode on the parent.
-    listItem.classList.toggle("todo__item--editing");
+  } else {
+    editInput.value=label.innerText;
+    editBtn.innerText="Save";
+    editBtn.classList.remove("todo__btn--edit");
+    editBtn.classList.add("todo__btn--save");
+  }
+
+  listItem.classList.toggle("todo__item--editing");
 };
 
 

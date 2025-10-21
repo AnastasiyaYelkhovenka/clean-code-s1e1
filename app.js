@@ -8,58 +8,48 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-const taskInput = document.getElementById("new-task-input"); //Add a new task.
+const taskInput = document.getElementById("new-task-input");
 const addButton = document.querySelector("#new-task-form .new-task__submit");
 const form = document.getElementById("new-task-form");
-const incompleteTaskHolder = document.getElementById("incomplete-tasks"); //ul of #incompleteTasks
-const completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
+const incompleteTaskHolder = document.getElementById("incomplete-tasks");
+const completedTasksHolder = document.getElementById("completed-tasks");
 
 
-//New task list item
 const createNewTaskElement = function (taskString) {
 
   const listItem = document.createElement("li");
 
-    //input (checkbox)
-    const checkBox = document.createElement("input"); //checkbx
-    //label
-    const label = document.createElement("label"); //label
-    //input (text)
-    const editInput = document.createElement("input"); //text
-    //button.edit
-    const editButton = document.createElement("button"); //edit button
+  const checkBox = document.createElement("input");
+  checkBox.type = "checkbox";
+  checkBox.className = "todo__checkbox";
 
-    //button.delete
-    const deleteButton = document.createElement("button"); //delete button
-    const deleteButtonImg = document.createElement("img"); //delete button image
-
+  const label = document.createElement("label");
   label.innerText = taskString;
-    label.className = "todo__label";
+  label.className = "todo__label";
 
-    //Each elements, needs appending
-    checkBox.type = "checkbox";
-    checkBox.className = "todo__checkbox";
+  const editInput = document.createElement("input");
+  editInput.type = "text";
+  editInput.className = "todo__input-edit";
 
-    editInput.type = "text";
-    editInput.className = "todo__input-edit";
+  const editButton = document.createElement("button");
+  editButton.innerText = "Edit";
+  editButton.className = "btn todo__btn todo__btn--edit";
+
+  const deleteButton = document.createElement("button");
+  deleteButton.className = "btn todo__btn todo__btn--delete";
+
+  const deleteButtonImg = document.createElement("img"); //delete button image
+  deleteButtonImg.src = './remove.svg';
+  deleteButtonImg.className = "todo__icon";
+  deleteButton.appendChild(deleteButtonImg);
 
 
-    editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className = "btn todo__btn todo__btn--edit";
-
-    deleteButton.className = "btn todo__btn todo__btn--delete";
-    deleteButtonImg.src = './remove.svg';
-    deleteButtonImg.className = "todo__icon";
-    deleteButton.appendChild(deleteButtonImg);
-
-
-    //and appending.
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
-    return listItem;
+  listItem.appendChild(checkBox);
+  listItem.appendChild(label);
+  listItem.appendChild(editInput);
+  listItem.appendChild(editButton);
+  listItem.appendChild(deleteButton);
+  return listItem;
 }
 
 
@@ -135,9 +125,9 @@ const taskIncomplete = function () {
 
 
 
-const ajaxRequest = function () {
+// const ajaxRequest = function () {
     // console.log("AJAX Request");
-}
+// }
 
 //The glue to hold it all together.
 
@@ -145,7 +135,7 @@ const ajaxRequest = function () {
 //Set the click handler to the addTask function.
 addButton.onclick=addTask;
 addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+// addButton.addEventListener("click",ajaxRequest);
 
 
 const bindTaskEvents = function (taskListItem,checkBoxEventHandler) {

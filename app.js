@@ -9,42 +9,47 @@
 // Event handling, user interaction is what starts the code execution.
 
 const taskInput = document.getElementById("new-task-input"); //Add a new task.
-// var addButton=document.getElementsByTagName("button")[0];//first button
+const addButton = document.querySelector("#new-task-form .new-task__submit");
+const form = document.getElementById("new-task-form");
 const incompleteTaskHolder = document.getElementById("incomplete-tasks"); //ul of #incompleteTasks
 const completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
 
 
 //New task list item
-var createNewTaskElement=function(taskString){
+const createNewTaskElement = function (taskString) {
 
-    var listItem=document.createElement("li");
+  const listItem = document.createElement("li");
 
     //input (checkbox)
-    var checkBox=document.createElement("input");//checkbx
+    const checkBox = document.createElement("input"); //checkbx
     //label
-    var label=document.createElement("label");//label
+    const label = document.createElement("label"); //label
     //input (text)
-    var editInput=document.createElement("input");//text
+    const editInput = document.createElement("input"); //text
     //button.edit
-    var editButton=document.createElement("button");//edit button
+    const editButton = document.createElement("button"); //edit button
 
     //button.delete
-    var deleteButton=document.createElement("button");//delete button
-    var deleteButtonImg=document.createElement("img");//delete button image
+    const deleteButton = document.createElement("button"); //delete button
+    const deleteButtonImg = document.createElement("img"); //delete button image
 
-    label.innerText=taskString;
-    label.className='task';
+  label.innerText = taskString;
+    label.className = "todo__label";
 
     //Each elements, needs appending
-    checkBox.type="checkbox";
-    editInput.type="text";
-    editInput.className="task";
+    checkBox.type = "checkbox";
+    checkBox.className = "todo__checkbox";
 
-    editButton.innerText="Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className="edit";
+    editInput.type = "text";
+    editInput.className = "todo__input-edit";
 
-    deleteButton.className="delete";
-    deleteButtonImg.src='./remove.svg';
+
+    editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
+    editButton.className = "btn todo__btn todo__btn--edit";
+
+    deleteButton.className = "btn todo__btn todo__btn--delete";
+    deleteButtonImg.src = './remove.svg';
+    deleteButtonImg.className = "todo__icon";
     deleteButton.appendChild(deleteButtonImg);
 
 

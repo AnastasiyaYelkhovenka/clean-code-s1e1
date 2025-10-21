@@ -27,7 +27,7 @@ const createNewTaskElement = function (taskString) {
   const deleteButton = document.createElement("button");
   deleteButton.className = "btn todo__btn todo__btn--delete";
 
-  const deleteButtonImg = document.createElement("img"); //delete button image
+  const deleteButtonImg = document.createElement("img");
   deleteButtonImg.src = './remove.svg';
   deleteButtonImg.className = "todo__icon";
   deleteButton.appendChild(deleteButtonImg);
@@ -54,7 +54,7 @@ const addTask = function () {
 
 
 const editTask = function () {
-  const listItem=this.parentNode;
+  const listItem = this.parentNode;
 
   const editInput = listItem.querySelector(".todo__input-edit");
   const label = listItem.querySelector(".todo__label");
@@ -69,8 +69,8 @@ const editTask = function () {
     editBtn.classList.add("todo__btn--edit");
 
   } else {
-    editInput.value=label.innerText;
-    editBtn.innerText="Save";
+    editInput.value = label.innerText;
+    editBtn.innerText = "Save";
     editBtn.classList.remove("todo__btn--edit");
     editBtn.classList.add("todo__btn--save");
   }
@@ -96,22 +96,22 @@ const taskCompleted = function () {
 const taskIncomplete = function () {
   const listItem = this.parentNode;
   incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem,taskCompleted);
+  bindTaskEvents(listItem, taskCompleted);
 }
 
 
-addButton.onclick=addTask;
-addButton.addEventListener("click",addTask);
+addButton.onclick = addTask;
+addButton.addEventListener("click", addTask);
 
 
-const bindTaskEvents = function (taskListItem,checkBoxEventHandler) {
+const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   const checkBox = taskListItem.querySelector(".todo__checkbox");
   const editButton = taskListItem.querySelector(".todo__btn--edit, .todo__btn--save");
   const deleteButton = taskListItem.querySelector(".todo__btn--delete");
 
-  editButton.onclick=editTask;
-  deleteButton.onclick=deleteTask;
-  checkBox.onchange=checkBoxEventHandler;
+  editButton.onclick = editTask;
+  deleteButton.onclick = deleteTask;
+  checkBox.onchange = checkBoxEventHandler;
 }
 
 

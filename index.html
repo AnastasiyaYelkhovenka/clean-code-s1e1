@@ -32,10 +32,9 @@
 
         <ul id="incomplete-tasks" class="todo__list">
           <li class="todo__item">
-            <label class="todo__label">
-              <input type="checkbox" class="todo__checkbox" />
-              <span class="todo__text">Pay bills</span>
-            </label>
+            <input type="checkbox" class="todo__checkbox">
+            <label class="todo__label">Pay bills</label>
+            <input type="text" value="Pay bills" class="todo__input-edit" />
             <button type="button" class="btn btn--ghost todo__btn todo__btn--edit">Edit</button>
             <button type="button" class="btn btn--icon todo__btn todo__btn--delete" aria-label="Delete">
               <img class="todo__icon" src="./remove.svg" alt="">
@@ -59,10 +58,9 @@
 
         <ul id="completed-tasks" class="todo__list todo__list--completed">
           <li class="todo__item">
-            <label class="todo__label">
-              <input type="checkbox" class="todo__checkbox" checked />
-              <span class="todo__text">See the Doctor</span>
-            </label>
+            <input type="checkbox" class="todo__checkbox" checked />
+            <label class="todo__label">See the Doctor</label>
+            <input type="text" value="See the Doctor" class="todo__input-edit" />
             <button type="button" class="btn btn--ghost todo__btn todo__btn--edit">Edit</button>
             <button type="button" class="btn btn--icon todo__btn todo__btn--delete" aria-label="Delete">
               <img class="todo__icon" src="./remove.svg" alt="">
